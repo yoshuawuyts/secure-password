@@ -95,6 +95,13 @@ impl Default for SecurePassword {
 
 impl fmt::Display for SecurePassword {
   fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-    write!(f, "")
+    write!(
+      f,
+      "memlimit {}-{}, opslimit {}-{}",
+      self.memlimit_min,
+      self.memlimit_max,
+      self.opslimit_min,
+      self.opslimit_max
+    )
   }
 }
