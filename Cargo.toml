@@ -5,6 +5,7 @@ authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 
 [dependencies]
 rust_sodium = "0.7.0"
+failure = "0.1.1"
 
 [dev-dependencies]
 clippy = "0.0.186"
