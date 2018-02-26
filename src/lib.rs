@@ -5,8 +5,8 @@
 //! Safe password hashing. Adapted from
 //! [secure-password](https://github.com/emilbayes/secure-password).
 //!
-//! - [documentation]
-//! - [crates.io]
+//! - [Documentation]
+//! - [Crates.io]
 //!
 //! ## Features
 //! - ~~State of the art password hashing algorithm (Argon2id)~~
@@ -46,21 +46,39 @@
 //! $ cargo add secure-password
 //! ```
 //!
-//! [documentation]: https://docs.rs/secure-password
-//! [crates.io]: https://crates.io/crates/secure-password
+//! [Documentation]: https://docs.rs/secure-password
+//! [Crates.io]: https://crates.io/crates/secure-password
 
+#[macro_use(Fail)]
+extern crate failure;
 extern crate rust_sodium as sodium;
 
 use sodium::crypto::pwhash;
 
 use std::fmt;
 
+/// An enum representing the different types of error states.
+#[derive(Debug, Fail)]
+pub enum Error {
+  #[fail(display = "Invalid password")] invalid {},
+  #[fail(display = "Unknown hash")] unknown_hash {},
+}
+
 /// A struct which exposes functions to hash and verify passwords.
+///
+/// ## Usage
+/// ```rust
+/// let pwd = SecurePassword::default();
+/// ```
 #[derive(Debug)]
 pub struct SecurePassword {
+  /// The minimum amount of memory allocated for hashing.
   memlimit_min: usize,
+  /// The maximum amount of memory allocated for hashing.
   memlimit_max: usize,
+  /// The minimum amount of round performed for hashing.
   opslimit_min: usize,
+  /// The maximum amount of round performed for hashing.
   opslimit_max: usize,
 }
 
@@ -76,7 +94,7 @@ pub enum VerifyStatus {
 
 impl SecurePassword {
   /// Hash a password.
-  pub fn hash() {}
+  pub fn hash<'a>() -> Result<&'a [u8], Error> {}
 
   /// Verify a hashed password.
   pub fn verify() {}
