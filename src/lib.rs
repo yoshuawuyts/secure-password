@@ -27,7 +27,7 @@ thread_local! {
     thread_mode: ThreadMode::Sequential,
     secret: &[],
     ad: &[],
-    hash_length: 32,
+    hash_length: 64,
   });
 }
 
