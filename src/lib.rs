@@ -17,11 +17,12 @@ use std::rc::Rc;
 use std::str;
 
 thread_local! {
+  // Uses libsodium's defaults
   static CONFIG: Rc<Config<'static>> = Rc::new(Config {
     variant: Variant::Argon2id,
     version: Version::Version13,
     mem_cost: 65536,
-    time_cost: 1,
+    time_cost: 2,
     lanes: 1,
     thread_mode: ThreadMode::Sequential,
     secret: &[],
