@@ -18,7 +18,7 @@ use std::str;
 
 thread_local! {
   static CONFIG: Rc<Config<'static>> = Rc::new(Config {
-    variant: Variant::Argon2i,
+    variant: Variant::Argon2id,
     version: Version::Version13,
     mem_cost: 65536,
     time_cost: 1,
