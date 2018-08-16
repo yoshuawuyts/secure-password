@@ -19,14 +19,19 @@ use std::str;
 thread_local! {
   // Uses libsodium's defaults
   static CONFIG: Rc<Config<'static>> = Rc::new(Config {
+    // https://github.com/jedisct1/libsodium/blob/master/src/libsodium/crypto_pwhash/argon2/pwhash_argon2id.c#L164
     variant: Variant::Argon2id,
     version: Version::Version13,
+    // https://github.com/jedisct1/libsodium/blob/master/src/libsodium/include/sodium/crypto_pwhash_argon2id.h#L70
     mem_cost: 65536,
     time_cost: 2,
+    // 1 lane is ideal for password hashing; multiple lanes is only useful when
+    // generating keys.
     lanes: 1,
     thread_mode: ThreadMode::Sequential,
     secret: &[],
     ad: &[],
+    // https://github.com/jedisct1/libsodium/blob/master/src/libsodium/crypto_pwhash/argon2/pwhash_argon2id.c#L15
     hash_length: 32,
   });
 }
