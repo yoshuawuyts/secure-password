@@ -2,8 +2,7 @@
 [![crates.io version][1]][2] [![build status][3]][4]
 [![downloads][5]][6] [![docs.rs docs][7]][8]
 
-Safe password hashing. Adapted from
-[secure-password](https://github.com/emilbayes/secure-password).
+Safe password hashing with thread-local storage.
 
 - [documentation][8]
 - [crates.io][2]
@@ -12,6 +11,8 @@ Safe password hashing. Adapted from
 ```sh
 $ cargo add secure-password
 ```
+## See Also
+- [emilbayes/secure-password](https://github.com/emilbayes/secure-password).
 
 ## License
 [Apache-2.0](./LICENSE)

@@ -4,8 +4,9 @@ version = "0.1.0"
 authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 
 [dependencies]
-rust_sodium = "0.7.0"
-failure = "0.1.1"
+failure = "0.1.2"
+rust-argon2 = "0.3.0"
+thread_local = "0.3.6"
 
 [dev-dependencies]
 clippy = "0.0.186"
