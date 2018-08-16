@@ -1,12 +1,15 @@
 [package]
 name = "secure-password"
 version = "0.1.0"
+license = "MIT OR Apache-2.0"
+description = "Safe password hashing"
+documentation = "https://docs.rs/secure-password"
+repository = "https://github.com/yoshuawuyts/secure-password"
+readme = "README.md"
 authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 
 [dependencies]
 failure = "0.1.2"
 rust-argon2 = "0.3.0"
 thread_local = "0.3.6"
-
-[dev-dependencies]
-clippy = "0.0.186"
+rand = "0.5.5"
