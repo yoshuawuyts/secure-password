@@ -1,6 +1,6 @@
 [package]
 name = "secure-password"
-version = "0.3.1"
+version = "0.3.2-alpha.0"
 license = "MIT OR Apache-2.0"
 description = "Safe password hashing"
 documentation = "https://docs.rs/secure-password"
