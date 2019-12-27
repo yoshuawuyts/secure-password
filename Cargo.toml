@@ -10,6 +10,6 @@ authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 
 [dependencies]
 failure = "0.1.2"
-rust-argon2 = "0.3.0"
+rust-argon2 = "0.6.1"
 thread_local = "0.3.6"
 rand = "0.6.0"
